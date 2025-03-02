@@ -19,24 +19,16 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
             });
         }
 
-        // const transport = nodemailer.createTransport({
-        //     host: process.env.SMTP_HOST,
-        //     port: 2525,
-        //     auth: {
-        //         user: process.env.SMTP_USER,
-        //         pass: process.env.SMTP_PASS
-        //     }
-        // });
-
-        // Looking to send emails in production? Check out our Email API/SMTP product!
-        var transport = nodemailer.createTransport({
-          host: "sandbox.smtp.mailtrap.io",
-          port: 2525,
-          auth: {
-            user: "625730bf75f9bf",
-            pass: "c04c81fbd9a27c"
-          }
+        const transport = nodemailer.createTransport({
+            host: process.env.SMTP_HOST,
+            port: 2525,
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS
+            }
         });
+
+       
 
         const mailOptions = {
             from: "AbhaySingh@gmail.com",
